@@ -7,11 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] TMP_Text gameOverText;
-    [SerializeField] PlayerController player;
+    // [SerializeField] PlayerController player;
     [SerializeField] AudioManager audioManager;
     [SerializeField] Hole hole;
 
-    string[] score = { "Hole in One", "Eagle", "Birdie", "Par" };
+    // string[] score = { "Hole in One", "Eagle", "Birdie", "Par" };
 
     private void Start()
     {
@@ -31,9 +31,11 @@ public class GameManager : MonoBehaviour
             //     player.ShootCount <= 4 ? "Par" :
             //     "Bogey";
 
-            gameOverText.text = player.ShootCount <= 4 ?
-                                    score[player.ShootCount - 1] :
-                                    "Bogey";
+            // gameOverText.text = player.ShootCount <= 4 ?
+            //                         score[player.ShootCount - 1] :
+            //                         "Bogey";
+
+            gameOverText.text = "Level 1 Completed!";
         }
     }
 

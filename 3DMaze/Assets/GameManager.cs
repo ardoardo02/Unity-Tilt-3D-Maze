@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(isWin ? "Menang" : "Kalah");
 
         audioManager.PlayHoleEnterSFX(isWin);
-        WinHoleCount++;
+        if(isWin) WinHoleCount++;
 
         if(WinHole != WinHoleCount && isWin)
             return;

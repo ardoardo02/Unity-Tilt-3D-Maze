@@ -5,8 +5,8 @@ public class Hole : MonoBehaviour
 {
     [SerializeField] ParticleSystem particle;
     [SerializeField] Trigger trigger;
-    [SerializeField] Boolean isWin;
-    public Action <Collider, Boolean> HoleEnterEvent;
+    [SerializeField] bool isWin;
+    public Action <Collider, bool> HoleEnterEvent;
 
     // public bool Entered { get => entered; }
 

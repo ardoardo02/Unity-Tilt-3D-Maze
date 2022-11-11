@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource sfx_GolfSwing;
     [SerializeField] AudioSource sfx_GolfCupDrop;
     [SerializeField] AudioSource sfx_Success;
+    [SerializeField] AudioSource sfx_Failed;
     [SerializeField] AudioSource sfx_WallHit;
     [SerializeField] AudioSource sfx_BallOut;
 
@@ -18,10 +19,15 @@ public class AudioManager : MonoBehaviour
         sfx_GolfSwing.Play();
     }
 
-    public void PlayWinSFX()
+    public void PlayHoleEnterSFX(bool isWin)
     {
         sfx_GolfCupDrop.Play();
-        sfx_Success.PlayDelayed(0.2f);
+
+        if(isWin){
+            sfx_Success.PlayDelayed(0.2f);
+            return;
+        }
+        sfx_Failed.PlayDelayed(0.2f);
     }
 
     public void PlayHitWall()

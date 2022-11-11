@@ -33,35 +33,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(gameObject.activeInHierarchy) return;
-
-        if (!gameOverPanel.activeInHierarchy)
-        {
-            audioManager.PlayWinSFX();
-            gameOverPanel.SetActive(true);
-
-            // gameOverText.text = 
-            //     player.ShootCount == 1 ? "Hole in One!" :
-            //     player.ShootCount == 2 ? "Eagle" :
-            //     player.ShootCount <= 4 ? "Par" :
-            //     "Bogey";
-
-            // gameOverText.text = player.ShootCount <= 4 ?
-            //                         score[player.ShootCount - 1] :
-            //                         "Bogey";
-
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            var currentLevel = int.Parse(currentSceneName.Split("Level")[1]);
-            gameOverText.text = $"Level {currentLevel} Completed!";
-        }
-    }
-
-    private void OnHoleEntered(Collider obj, Boolean isWin)
+    private void OnHoleEntered(Collider obj, bool isWin)
     {
         Debug.Log(isWin ? "Menang" : "Kalah");
 
+        audioManager.PlayHoleEnterSFX(isWin);
         gameOverPanel.SetActive(true);
 
         if(!isWin){
@@ -71,8 +47,6 @@ public class GameManager : MonoBehaviour
         }
 
         // Menang
-        audioManager.PlayWinSFX();
-
         string currentSceneName = SceneManager.GetActiveScene().name;
         var currentLevel = int.Parse(currentSceneName.Split("Level")[1]);
         gameOverText.text = $"Level {currentLevel} Completed!";

@@ -26,7 +26,7 @@ public class CameraTouchController : MonoBehaviour
         
         var touch0 = Input.GetTouch(0);
 
-        // simpan posisi awal tapi posisi real world
+        if(Input.touchCount == 1){// simpan posisi awal tapi posisi real world
         if(touch0.phase == TouchPhase.Began){
             touchBeganWorldPos = Camera.main.ScreenToWorldPoint(
                 new Vector3(touch0.position.x, touch0.position.y, distance)
@@ -53,7 +53,7 @@ public class CameraTouchController : MonoBehaviour
                 targetPos,
                 Time.deltaTime * filterFactor
             );
-        }
+        }}
 
         if (Input.touchCount < 2)
             return;

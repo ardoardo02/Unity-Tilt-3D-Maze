@@ -12,18 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingProgress.unity
     guid: 275ab21ceec9231488e1beeaa13743fa
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Level1.unity
+    guid: 72945bb27a2b2c3488f73333779e4729
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
-    guid: 13def22331a690a4d9f49e4d4ade7233
-  - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 273a09640d3626f49bfbe5bcc8e83420
-  - enabled: 1
-    path: Assets/Scenes/Level4.unity
-    guid: 14c43afe95b0e0f4896c5549bb3994cc
-  - enabled: 1
-    path: Assets/Scenes/Level5.unity
-    guid: 1b6e04038a66adb418531a2c2f54b0eb
+    path: Assets/Scenes/Level2.unity
+    guid: 70549824af0d0e042beb8a630c72f3ed
   m_configObjects: {}

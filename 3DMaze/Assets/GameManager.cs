@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text gameOverText;
     // [SerializeField] PlayerController player;
     [SerializeField] AudioManager audioManager;
+    [Header("Game Settings")]
+    [SerializeField] int WinHole = 1;
+    int WinHoleCount;
     [SerializeField] Hole[] hole;
 
     // string[] score = { "Hole in One", "Eagle", "Birdie", "Par" };
@@ -38,7 +41,15 @@ public class GameManager : MonoBehaviour
         Debug.Log(isWin ? "Menang" : "Kalah");
 
         audioManager.PlayHoleEnterSFX(isWin);
+        WinHoleCount++;
+
+        if(WinHole != WinHoleCount && isWin)
+            return;
+
         gameOverPanel.SetActive(true);
+
+        var cameraController = Camera.main.GetComponent<CameraTouchController>();
+        if(cameraController != null) cameraController.enabled = false;
 
         if(!isWin){
             gameOverText.text = "Level Failed";

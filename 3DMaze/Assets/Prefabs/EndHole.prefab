@@ -5907,6 +5907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 5081697787404273635}
+  trigger: {fileID: 0}
+  isWin: 0
 --- !u!1 &3116546256929291521
 GameObject:
   m_ObjectHideFlags: 0
